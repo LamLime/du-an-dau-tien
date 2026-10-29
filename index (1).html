@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10152f" />
+  <title>Trần Trúc Lam | Trang cá nhân</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
+    :root{--bg:#0b1024;--panel:rgba(255,255,255,.075);--line:rgba(255,255,255,.13);--text:#f5f7ff;--muted:#b7bfdc;--pink:#ff83c8;--blue:#83b8ff;--mint:#91f4d4}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:"Be Vietnam Pro",system-ui,sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 15%,#39245e 0,transparent 32%),radial-gradient(circle at 85% 35%,#143b65 0,transparent 30%),linear-gradient(145deg,#0b1024,#10142c 55%,#15102c)}
+    #stars{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+    .star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;opacity:.45;animation:twinkle 3s infinite ease-in-out}
+    @keyframes twinkle{50%{opacity:1;transform:scale(1.8)}}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+    @keyframes drift{0%{transform:translateX(-10px)}50%{transform:translateX(15px)}100%{transform:translateX(-10px)}}
+    @keyframes gradient{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 #ff83c844}50%{box-shadow:0 0 0 12px #ff83c800}}
+    nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:16px max(5vw,20px);backdrop-filter:blur(18px);background:#0b1024b8;border-bottom:1px solid #ffffff12}
+    .brand{font-weight:800;letter-spacing:.4px}.brand span{color:var(--pink)}
+    .links{display:flex;gap:24px}.links a{color:var(--muted);text-decoration:none;font-size:.9rem;transition:.2s}.links a:hover{color:white}
+    .wrap{width:min(1100px,90%);margin:auto}
+    .hero{min-height:86vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:50px;padding:75px 0 60px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:99px;background:#ffffff08;color:var(--mint);font-size:.85rem}
+    .dot{width:8px;height:8px;background:var(--mint);border-radius:50%;box-shadow:0 0 14px var(--mint)}
+    h1{font-size:clamp(2.6rem,6vw,5.3rem);line-height:1.07;letter-spacing:-2.5px;margin:22px 0}
+    .gradient{background:linear-gradient(100deg,var(--pink),#b7a1ff,var(--blue),var(--mint));background-size:250% 250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradient 7s ease infinite}
+    .lead{color:var(--muted);font-size:1.08rem;line-height:1.9;max-width:590px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-block;text-decoration:none;padding:13px 19px;border-radius:14px;font-weight:700;font-size:.92rem;transition:transform .25s,box-shadow .25s}
+    .btn:hover{transform:translateY(-4px)}.primary{color:#17142a;background:linear-gradient(110deg,var(--pink),#c0adff,var(--blue));box-shadow:0 8px 30px #b78cff2c}.secondary{color:white;border:1px solid var(--line);background:#ffffff09}
+    .hero-art{position:relative;display:grid;place-items:center;min-height:420px}
+    .orb{position:absolute;width:320px;height:320px;border-radius:50%;background:linear-gradient(135deg,#ff83c84c,#83b8ff32);filter:blur(1px);animation:float 7s ease-in-out infinite}
+    .portrait{width:min(310px,75vw);aspect-ratio:4/5;object-fit:cover;border-radius:46% 46% 28px 28px;border:1px solid #ffffff55;box-shadow:0 25px 90px #0008;position:relative;animation:float 6s ease-in-out infinite;z-index:2}
+    .sticker{position:absolute;z-index:3;padding:12px 15px;border:1px solid var(--line);border-radius:16px;background:#151b38d9;backdrop-filter:blur(10px);box-shadow:0 12px 35px #0004;font-size:.85rem;animation:drift 5s ease-in-out infinite}
+    .s1{top:13%;left:-1%}.s2{right:-3%;bottom:17%;animation-delay:-2s}.spark{position:absolute;font-size:2rem;color:var(--pink);animation:float 4s infinite}
+    section{padding:70px 0}.section-head{text-align:center;margin-bottom:36px}.kicker{color:var(--pink);text-transform:uppercase;letter-spacing:3px;font-size:.75rem;font-weight:800}.section-head h2{font-size:clamp(2rem,4vw,3rem);margin:12px 0}.section-head p{color:var(--muted);line-height:1.8}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .glass{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:27px;backdrop-filter:blur(14px);box-shadow:0 15px 50px #00000010}
+    .glass h3{margin-top:0}.glass p{color:var(--muted);line-height:1.85}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .fact{padding:15px;border-radius:15px;background:#ffffff08;border:1px solid #ffffff0d}.fact strong{display:block;margin-bottom:5px}.fact span{color:var(--muted);font-size:.87rem}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.pill{padding:9px 12px;border-radius:99px;background:#a8b9ff14;border:1px solid #a8b9ff35;color:#dce4ff;font-size:.85rem}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.photo{position:relative;overflow:hidden;border-radius:22px;border:1px solid var(--line);aspect-ratio:4/5;background:#1a2040}.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .5s}.photo:hover img{transform:scale(1.09);filter:saturate(1.2)}.photo:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#090d20d9)}.caption{position:absolute;z-index:2;bottom:18px;left:18px;right:18px}.caption strong{font-size:1.05rem}.caption span{display:block;color:#d3d8ed;font-size:.83rem;margin-top:5px}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{display:flex;gap:17px;align-items:flex-start}.project-icon{width:54px;height:54px;display:grid;place-items:center;flex-shrink:0;border-radius:17px;background:linear-gradient(135deg,#ff83c833,#83b8ff33);font-size:1.6rem}.project h3{margin:3px 0 8px}.project p{margin:0;color:var(--muted);line-height:1.7;font-size:.92rem}
+    .quote{text-align:center;padding:38px;background:linear-gradient(120deg,#ff83c815,#9c8bff15,#83b8ff15);border:1px solid var(--line);border-radius:26px}.quote p{font-size:clamp(1.2rem,3vw,1.8rem);line-height:1.7;margin:0 auto;max-width:800px}.quote span{display:block;color:var(--mint);margin-top:15px}
+    .contact{text-align:center}.contact .glass{max-width:700px;margin:auto}.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+    footer{text-align:center;padding:28px 15px;color:#8f98b9;border-top:1px solid #ffffff10;font-size:.85rem}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}.reveal.show{opacity:1;transform:translateY(0)}
+    .top{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border:1px solid var(--line);border-radius:14px;background:#171b37;color:white;cursor:pointer;display:none;z-index:10}
+    @media(max-width:760px){.links{gap:12px}.links a{font-size:.78rem}.hero{grid-template-columns:1fr;text-align:center;padding-top:55px;gap:10px}.lead{margin:auto}.actions{justify-content:center}.hero-art{min-height:390px}.s1{left:4%}.s2{right:2%}.about-grid,.project-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.photo:last-child{grid-column:span 2;aspect-ratio:16/9}.facts{grid-template-columns:1fr 1fr}}
+    @media(max-width:430px){nav{padding:14px 5%}.links{gap:8px}.links a{font-size:.7rem}.brand{font-size:.9rem}.gallery{gap:10px}.glass{padding:21px}.hero-art{min-height:340px}.orb{width:260px;height:260px}.portrait{width:245px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div id="stars" aria-hidden="true"></div>
+  <nav>
+    <div class="brand">Lam<span>.</span></div>
+    <div class="links">
+      <a href="#about">Giới thiệu</a><a href="#gallery">Hình ảnh</a><a href="#projects">Dự án</a><a href="#contact">Liên hệ</a>
+    </div>
+  </nav>
+  <main>
+    <header class="hero wrap">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Xin chào, chào mừng bạn đến với thế giới của mình</div>
+        <h1>Mình là<br><span class="gradient">Trần Trúc Lam</span></h1>
+        <p class="lead">Một người trẻ yêu thích khám phá công nghệ, học hỏi điều mới và biến những ý tưởng nhỏ thành điều thú vị. Đây là góc nhỏ của mình trên Internet. ✨</p>
+        <div class="actions">
+          <a class="btn primary" href="#about">Khám phá về mình ↓</a>
+          <a class="btn secondary" href="https://github.com/LamLime" target="_blank" rel="noreferrer">⌘ GitHub của mình</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="orb"></div>
+        <span class="spark" style="top:8%;right:18%">✦</span><span class="spark" style="bottom:13%;left:10%;animation-delay:-2s">✧</span>
+        <img class="portrait" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85" alt="Bầu trời đêm đầy sao" />
+        <div class="sticker s1">🌙 Mơ lớn, bắt đầu từ điều nhỏ</div>
+        <div class="sticker s2">💻 Đang học và sáng tạo</div>
+      </div>
+    </header>
+
+    <section id="about" class="wrap">
+      <div class="section-head reveal"><div class="kicker">Một chút về mình</div><h2>Không ngừng <span class="gradient">khám phá</span></h2><p>Mỗi ngày là một cơ hội để học thêm điều gì đó mới.</p></div>
+      <div class="about-grid">
+        <article class="glass reveal">
+          <h3>👋 Rất vui được gặp bạn!</h3>
+          <p>Mình là Trần Trúc Lam. Mình đang bắt đầu hành trình tìm hiểu lập trình và công nghệ. Mình muốn học từ những điều cơ bản, thực hành qua từng dự án và dần tạo ra những sản phẩm mang dấu ấn riêng.</p>
+          <p>Mình tin rằng không cần phải giỏi ngay từ đầu — chỉ cần kiên trì tiến bộ từng chút một.</p>
+        </article>
+        <article class="glass reveal">
+          <h3>✨ Những điều mình quan tâm</h3>
+          <div class="facts">
+            <div class="fact"><strong>💻 Công nghệ</strong><span>Khám phá cách mọi thứ hoạt động</span></div>
+            <div class="fact"><strong>🎨 Sáng tạo</strong><span>Biến ý tưởng thành sản phẩm</span></div>
+            <div class="fact"><strong>📚 Học hỏi</strong><span>Mỗi ngày biết thêm một chút</span></div>
+            <div class="fact"><strong>🚀 Phát triển</strong><span>Tiến bộ qua từng dự án</span></div>
+          </div>
+          <div class="skills"><span class="pill">🌱 Beginner coder</span><span class="pill">HTML & CSS</span><span class="pill">Git & GitHub</span><span class="pill">Always learning</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="wrap">
+      <div class="section-head reveal"><div class="kicker">Bảng cảm hứng</div><h2>Một thế giới đầy <span class="gradient">màu sắc</span></h2><p>Một vài hình ảnh mang cảm giác mơ mộng, sáng tạo và bình yên.</p></div>
+      <div class="gallery">
+        <article class="photo reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="Hồ nước và núi dưới bầu trời" /><div class="caption"><strong>🌄 Đi tìm cảm hứng</strong><span>Đôi khi ý tưởng đến từ những điều bình dị.</span></div></article>
+        <article class="photo reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85" alt="Bầu trời đêm đầy sao" /><div class="caption"><strong>🌌 Mơ về những vì sao</strong><span>Luôn giữ lại một chút tò mò.</span></div></article>
+        <article class="photo reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85" alt="Bàn làm việc với máy tính lập trình" /><div class="caption"><strong>💻 Góc sáng tạo</strong><span>Từng dòng code, từng bước tiến bộ.</span></div></article>
+      </div>
+    </section>
+
+    <section id="projects" class="wrap">
+      <div class="section-head reveal"><div class="kicker">Đang xây dựng</div><h2>Hành trình <span class="gradient">của mình</span></h2><p>Dự án nhỏ hôm nay có thể là bước khởi đầu cho điều lớn hơn ngày mai.</p></div>
+      <div class="project-grid">
+        <article class="glass project reveal"><div class="project-icon">🌱</div><div><h3>Dự án đầu tiên</h3><p>Nơi mình bắt đầu làm quen với việc tạo website và quản lý mã nguồn bằng GitHub.</p><div class="skills"><a class="pill" style="text-decoration:none" href="https://github.com/LamLime/du-an-dau-tien" target="_blank" rel="noreferrer">Xem repository ↗</a></div></div></article>
+        <article class="glass project reveal"><div class="project-icon">🚀</div><div><h3>Những ý tưởng tiếp theo</h3><p>Mình sẽ tiếp tục thực hành, thử nghiệm thiết kế mới và cập nhật những sản phẩm mình học được ở đây.</p></div></article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="quote reveal"><p>“Không cần đi thật nhanh. Chỉ cần đừng ngừng khám phá và tin vào hành trình của chính mình.”</p><span>— Một lời nhắc dành cho bản thân ✨</span></div>
+    </section>
+
+    <section id="contact" class="wrap contact">
+      <div class="section-head reveal"><div class="kicker">Nói lời chào</div><h2>Kết nối với <span class="gradient">mình nhé!</span></h2><p>Cảm ơn bạn đã ghé thăm trang cá nhân của mình 💙</p></div>
+      <div class="glass reveal"><h3>💌 Tìm mình trên GitHub</h3><p>Mình sẽ cập nhật hành trình học lập trình và các dự án mới tại đây.</p><div class="contact-links"><a class="btn primary" href="https://github.com/LamLime" target="_blank" rel="noreferrer">Mở GitHub ↗</a><a class="btn secondary" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Lên đầu trang ↑</a></div></div>
+    </section>
+  </main>
+  <footer>Được tạo với 💙 bởi Trần Trúc Lam · <span id="year"></span></footer>
+  <button class="top" id="topBtn" aria-label="Lên đầu trang" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <script>
+    // Tạo những ngôi sao nhỏ chuyển động nhẹ trên nền.
+    const stars = document.getElementById('stars');
+    for (let i = 0; i < 65; i++) {
+      const star = document.createElement('span');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = (Math.random() * 4) + 's';
+      star.style.animationDuration = (2 + Math.random() * 4) + 's';
+      stars.appendChild(star);
+    }
+    // Hiện từng khối khi cuộn tới.
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Nút lên đầu trang.
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      topBtn.style.display = window.scrollY > 500 ? 'block' : 'none';
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
